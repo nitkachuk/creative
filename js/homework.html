@@ -1,0 +1,59 @@
+<script type="module">
+
+
+
+/* импорт классов */
+
+import { Person as pers, Programmer as prog } from './classes.js';
+
+const Nikolai = new pers( "Николай" )
+Nikolai.greet()
+
+const Creative = new prog( "Николай", "Frontend" );
+Creative.greet();
+
+
+/* Rest */
+
+const rest = ( a, b, ...args ) => {
+
+    console.log( args );    /* выведет массивом */
+
+}
+
+rest( 1, 2, 3, 4, 5 );
+
+
+
+/* Spread */
+
+const array = [ 1, 2, 3, 5, 8, 13 ];
+console.log( ...array )     /* выведет строкой */
+
+const spread = [ 0, ...array ]; 
+console.log( spread )   /* новый массив на основе старого */
+
+
+
+/* Destructuring */
+
+const destruct = [ 1, 2, 3, 5, 8, 13 ];
+
+const [ a, b, ...c ] = destruct;    /* создание переменных */
+console.log( a, b, c );
+
+const [ d, , e ] = array;   /* пропускаем вторую */
+console.log( d, e ); 
+
+const address = {
+    country: 'Russia',
+    city: 'Tumen',
+    //street: 'Malygina',
+}
+
+const { city, country, street = 'Lenina' } = address;
+console.log( city, country, street );
+
+
+
+</script>
