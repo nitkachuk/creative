@@ -1,0 +1,82 @@
+<script>
+
+
+
+function hello() {
+    console.log( 'Hello', this );   /* смотрим контекст */
+}
+
+
+const person = {
+    
+    name: 'Nobody',
+    age: 0,
+    sayHello: hello,
+
+    sayHelloWindow: hello.bind( window ),       /* window */
+    sayHelloThis: hello.bind( this ),           /* this */
+    sayHelloDocument: hello.bind( document ),    /* document */
+
+    logInfo: function( job, wage ) {   /* стрелочная ф-ция теряет контекст */
+
+        console.group( `${ this.name } info:` )
+            console.log( `Name is ${ this.name }` )
+            console.log( `Age is ${ this.age }` )
+            console.log( `Job is ${ job }` )
+            console.log( `Wage is ${ wage }` )
+        console.groupEnd()
+
+    }
+
+}
+
+const anotherPerson = {
+    name: 'Nikolai',
+    age: 30
+}
+
+
+/* меняем контекст */
+
+person.logInfo.bind( anotherPerson, 'Frontend', '100000' )();      
+person.logInfo.call( anotherPerson, 'Frontend', '100000' ); 
+person.logInfo.apply( anotherPerson, [ 'Frontend', '100000' ] );
+
+
+/* прототипы */
+
+const array = [ 1, 2, 3, 4 ,5 ];
+
+
+/*
+метод хуже
+
+function calc( arr, n )  {
+
+    return arr.map( (i) => {
+
+        return i * n;
+
+    } )
+
+}
+*/
+
+/* метод лучше */
+
+Array.prototype.calc = ( n ) =>    {
+
+    return array.map( (i) => {
+
+        return i * n;
+
+    } )
+
+}
+
+
+console.log(  array.calc( 2 )  );
+
+
+
+</script>
