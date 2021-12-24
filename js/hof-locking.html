@@ -1,0 +1,74 @@
+<script>
+
+
+
+/* Функции высшего порядка */
+
+function copy( arr, instructions )  {
+
+    const output = [];
+
+    arr.forEach(  ( item, i, arr )  =>    {
+        output.push( instructions( arr[ i ] ) );    /* используем ф-цию */
+    } );
+
+    return output;
+
+}
+
+
+function numSquared( num ) {
+
+    return num * num;
+
+}
+
+
+const result = copy( [1, 2, 3], numSquared );   /* передаем callback */
+console.log( result );
+
+
+
+/* Замыкание */
+
+function create( n )  {
+
+    return ( num ) => {
+
+        return n + num;
+
+    }
+
+}
+
+const calcOne = create( 1 );
+const calcTen = create( 10 );
+
+console.log(  calcOne( 10 )  );
+console.log(  calcTen( 41 )  );
+
+
+/* Замыкание */
+
+function urlGenerator( domain )     {
+
+    return ( url ) =>  {
+
+        return `https://${ url }.${ domain }`;
+
+    }
+
+}
+
+const comUrl = urlGenerator('com');
+const ruUrl = urlGenerator('ru');
+
+console.log(  comUrl('google')  );
+console.log(  comUrl('netflix')  );
+
+console.log(  ruUrl('yandex')  );
+console.log(  ruUrl('vkontakte')  );
+
+
+
+</script>
