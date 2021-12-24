@@ -1,4 +1,4 @@
-Добавил функции высшего порядка, forEach, замыкание   (hof-locking.html)
+Добавил функции высшего порядка, forEach, замыкание   (hof-closures.html)
 
 Добавил контекст, this, bind, call, apply, прототипы, map   (this.html)
 
