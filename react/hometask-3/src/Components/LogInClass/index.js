@@ -31,8 +31,8 @@ class LogInClass extends Component   {
     
                 
                 {this.state.logged
-                    ? <LoggedInFalse padd={ 10 } />
-                    : <LoggedInTrue padd={ 10 } />
+                    ? <LoggedInTrue padd={ 10 } />
+                    : <LoggedInFalse padd={ 10 } />
                 }
                 
     

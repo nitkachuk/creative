@@ -1,14 +1,14 @@
 
 import '../../login.scss';
 
-function LogInTrue ( { padd } )   {
+function LogInFalse ( { padd } )   {
 
     return( 
 
-        <div className="login-box" style={{ top: `${padd}px` }} >
+        <div className="login-box" style={{ top: `${padd}px` }}>
 
-            Вы не авторизовались, <b>Гость</b>
-            <img src="images/login_button.png" alt="LoginClass" />
+            Добро пожаловать, <b style={{ color: '#ff0000' }} >xxx.RammsteinFan.xxx</b>
+            <img src="images/logout_button.png" alt="LogoutClass" />
 
         </div>
 
@@ -16,4 +16,4 @@ function LogInTrue ( { padd } )   {
 
 }
 
-export default LogInTrue;
+export default LogInFalse;
