@@ -5,14 +5,21 @@ import LoggedInFalse from '../LoggedInFalse/';
 
 class LogInClass extends Component   {
 
-    state = {
-        logged: false
-    };
+    constructor(props) {
+
+        super(props);
+
+        this.state = {
+            logged: false
+        };     
+
+    }
 
     toggleLogIn = () => {
         this.setState( { logged: !this.state.logged } );
         console.log( this.state.logged );
     }
+    
 
     render() {
 
