@@ -18,8 +18,8 @@ function LogInFunc (  )   {
 
             
             {logged
-                ? <LoggedInFalse padd={ 50 } />
-                : <LoggedInTrue padd={ 50 } />
+                ? <LoggedInTrue padd={ 50 } />
+                : <LoggedInFalse padd={ 50 } />
             }
             
 
