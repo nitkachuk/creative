@@ -15,17 +15,10 @@ class LogInClass extends Component   {
 
     }
 
-    componentDidUpdate() {
-        if( this.state.logged )     this.timer() 
-    }
-
-    timer = () => {
-
-        setTimeout(
-            () =>  this.setState( { logged: false } ),
-            3000
-        );
-
+    
+    // выход из аккаунта
+    logOut = () => {
+        this.setState( { logged: false } );
     }
 
     toggleLogIn = () => {
@@ -43,7 +36,7 @@ class LogInClass extends Component   {
     
                 
                 {this.state.logged
-                    ? <LoggedInTrue padd={ 10 } />
+                    ? <LoggedInTrue padd={ 10 } sendFunction={ this.logOut } />
                     : <LoggedInFalse padd={ 10 } />
                 }
                 

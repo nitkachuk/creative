@@ -6,11 +6,27 @@ import '../../login.scss';
 class LogInFalse extends Component   {
 
     componentDidMount() {
-        console.log( "Произошел вход в аккаунт" );
+
+        // Запускаем таймер логаута (самоуничтожения компонента)
+        
+        this.timeout = this.timer();
+
+    }
+
+    timer = () => {
+
+        setTimeout(
+            () => this.props.sendFunction(),       // запускаем функцию в родительском компоненте
+            2000
+        );
+
     }
 
     componentWillUnmount() {
-        console.log( "Произошел выход из аккаунта" );
+
+        clearTimeout( this.timeout );
+        console.log( "Произошла очистка таймера" );
+
     }
     
     render() {
