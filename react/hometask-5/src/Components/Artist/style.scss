@@ -1,0 +1,33 @@
+.artist-box {
+
+    width: 180px;
+    height: 320px;
+    margin: 20px auto;
+    border: 1px solid black;
+    padding: 25px 20px;
+    text-align: center;
+    transition: 0.2s ease-in-out;
+    user-select: none;
+    cursor: pointer;
+    
+        &:hover {
+
+            background-color: #FFEBCD;
+            transition: 0.2s ease-in-out;
+
+        }
+
+        div {
+            margin-top: 10px;
+        }
+
+        .role{ 
+            margin-top: 15px; 
+        }
+
+        .instrument {
+            width: 50px;
+            margin-top: 20px;
+        }
+
+}
