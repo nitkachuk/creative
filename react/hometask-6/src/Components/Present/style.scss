@@ -1,0 +1,25 @@
+
+.present-box {
+    
+    margin-top: 30px;
+    text-align: center;
+
+
+        img {
+
+            margin-top: 30px;
+            width: 40%;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            margin-bottom: 60px;
+
+        }
+
+            img:hover {
+
+                transform: scale( 1.1 );
+                transition: 0.2s ease-in-out;
+
+            }
+
+}
