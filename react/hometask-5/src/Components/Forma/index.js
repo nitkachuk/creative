@@ -9,7 +9,7 @@ class LogInClass extends Component   {
         super(props);
 
         this.state = {
-            present: 0
+            present: 0,
         };     
 
     }
@@ -38,7 +38,7 @@ class LogInClass extends Component   {
 
                     {
                         this.state.present 
-                        ? <i>С наступающим! Теперь нажмите на подарок, чтобы просмотреть запрет всплытия в консоли</i>  
+                        ? <i>С наступающим! Теперь нажмите на подарок, чтобы посмотреть запрет всплытия в консоли</i>  
                         : <i>Чтобы получить подарок, нажмите Enter</i>
                     }
 
